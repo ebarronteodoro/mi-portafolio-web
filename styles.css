@@ -142,3 +142,9 @@ nav > ul > li > a:hover {
 .desc {
   font-size: 0.8em;
 }
+
+@media (max-width: 767px){
+    .intro{
+        width: 60%;
+    }
+}
