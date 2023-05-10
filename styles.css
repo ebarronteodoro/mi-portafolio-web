@@ -28,23 +28,42 @@ body {
   background-color: white;
 }
 
-.header {
+header {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0;left: 0;right: 0;
   display: flex;
-  padding: 3% 5%;
+  padding: 0% 5%;
+  min-height: 12vh;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  background-color: white;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  transition: 0.5s;
   z-index: 10;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+section{
+  min-height: 100vh;
+  height: 100vh;
+}
+
+.section-padding {
+  padding-top: 0 !important;
 }
 
 .nav {
   display: flex;
   flex-direction: row;
+}
+
+.icono{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 nav > ul {
@@ -59,7 +78,7 @@ nav ul li {
   transition: all 300ms ease;
 }
 
-nav > ul > li > a {
+nav > ul > li > a{
   text-decoration: none;
   color: var(--gris2);
   transition: all 300ms ease;
@@ -69,28 +88,24 @@ nav > ul > li > a {
   border-radius: 10px;
 }
 
-nav > ul > li:hover {
-  transform: scale(1.1);
+nav > ul > li > a.active,
+nav > ul > li > a:hover{
+  color: var(--color2);
 }
 
-nav > ul > li > a:hover {
-  color: var(--color2);
-  /* box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); */
-}
 
 .contenedor-intro {
-    margin-top: 7%;
   width: 100%;
+  padding-top: 80px;
   display: flex;
-  justify-content: center;
+  position: relative;
   align-items: center;
   padding: 3% 0;
   display: flex;
-  height: 70vh;
   background-image: linear-gradient(
       0deg,
-      rgba(0, 0, 0, 0.452),
-      rgba(0, 0, 0, 0.452)
+      rgba(0, 0, 0, 0.575),
+      rgba(0, 0, 0, 0.575)
     ),
     url("images/code.jpeg");
   background-repeat: no-repeat;
@@ -102,21 +117,25 @@ nav > ul > li > a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 2% 5%;
   width: 25%;
-  border-radius: 25px;
-  -webkit-border-radius: 25px;
+  border-radius: 10%;
+  -webkit-border-radius: 10%;
   background-color: var(--gris);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 #Esteban {
   width: 140px;
   height: 140px;
   animation: changeBorderRadius 3s ease-in-out infinite alternate;
-  border: 3px solid #2d2e32;
+  border: 3px solid var(--gris2);
   border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
 }
 
@@ -143,8 +162,22 @@ nav > ul > li > a:hover {
   font-size: 0.8em;
 }
 
-@media (max-width: 767px){
-    .intro{
-        width: 60%;
-    }
+@media (max-width: 767px) {
+  .intro {
+    width: 60%;
+    backdrop-filter: blur(7px);
+  }
+  ::-webkit-scrollbar {
+    width: 8px; /* Ancho del scrollbar */
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Color del fondo del scrollbar */
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color del thumb del scrollbar */
+    border-radius: 15px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Color del thumb del scrollbar al pasar el mouse sobre él */
+  }
 }
