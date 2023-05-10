@@ -30,7 +30,9 @@ body {
 
 header {
   position: fixed;
-  top: 0;left: 0;right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   padding: 0% 5%;
   min-height: 12vh;
@@ -45,7 +47,7 @@ header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-section{
+section {
   min-height: 100vh;
   height: 100vh;
 }
@@ -59,7 +61,7 @@ section{
   flex-direction: row;
 }
 
-.icono{
+.icono {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -78,7 +80,7 @@ nav ul li {
   transition: all 300ms ease;
 }
 
-nav > ul > li > a{
+nav > ul > li > a {
   text-decoration: none;
   color: var(--gris2);
   transition: all 300ms ease;
@@ -89,10 +91,9 @@ nav > ul > li > a{
 }
 
 nav > ul > li > a.active,
-nav > ul > li > a:hover{
+nav > ul > li > a:hover {
   color: var(--color2);
 }
-
 
 .contenedor-intro {
   width: 100%;
@@ -162,6 +163,12 @@ nav > ul > li > a:hover{
   font-size: 0.8em;
 }
 
+.hamburger-icon {
+  display: none;
+}
+
+/* Responsive */
+
 @media (max-width: 767px) {
   .intro {
     width: 60%;
@@ -179,5 +186,38 @@ nav > ul > li > a:hover{
   }
   ::-webkit-scrollbar-thumb:hover {
     background-color: #555; /* Color del thumb del scrollbar al pasar el mouse sobre él */
+  }
+
+  .hamburger-icon {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+  }
+
+  nav ul {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    padding: 20px;
+    z-index: 999;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+  }
+
+  nav.deployed ul{
+    display: block;
+    opacity: 1;
+    
+  }
+
+  nav.deployed a {
+    color: #333;
   }
 }
