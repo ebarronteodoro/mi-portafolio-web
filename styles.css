@@ -211,13 +211,18 @@ nav > ul > li > a:hover {
     opacity: 0;
   }
 
-  nav.deployed ul{
-    display: block;
+  nav.deployed ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     opacity: 1;
     
   }
 
   nav.deployed a {
     color: #333;
+    padding: 30%;
+    font-size: 1.7em;
   }
 }
