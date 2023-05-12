@@ -8,6 +8,8 @@
   --gris: rgba(255, 255, 255, 0);
   --gris2: #2d2e32;
   scroll-behavior: smooth;
+  text-decoration: none;
+  list-style: none;
 }
 
 ::-webkit-scrollbar {
@@ -47,9 +49,25 @@ header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-section {
+#inicio {
   min-height: 100vh;
   height: 100vh;
+}
+
+#proyectos{
+  min-height: 88.5vh;
+  height: 88.5vh;
+}
+
+#habilidades{
+  min-height: 88.5vh;
+  height: 88.5vh;
+  background-color:antiquewhite;
+}
+
+#contacto{
+  min-height: 88.5vh;
+  height: 88.5vh;
 }
 
 .section-padding {
@@ -74,14 +92,12 @@ nav > ul {
   justify-content: center;
 }
 
-nav ul li {
-  list-style: none;
+nav > ul > li {
   position: relative;
   transition: all 300ms ease;
 }
 
 nav > ul > li > a {
-  text-decoration: none;
   color: var(--gris2);
   transition: all 300ms ease;
   font-size: 1em;
@@ -105,8 +121,8 @@ nav > ul > li > a:hover {
   display: flex;
   background-image: linear-gradient(
       0deg,
-      rgba(0, 0, 0, 0.575),
-      rgba(0, 0, 0, 0.575)
+      rgba(0, 0, 0, 0.829),
+      rgba(0, 0, 0, 0.829)
     ),
     url("images/code.jpeg");
   background-repeat: no-repeat;
@@ -119,22 +135,22 @@ nav > ul > li > a:hover {
   flex-direction: column;
   align-items: center;
   position: absolute;
-  top: 55%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 2% 5%;
   width: 25%;
   border-radius: 10%;
   -webkit-border-radius: 10%;
-  background-color: var(--gris);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  background-color: rgba(255, 255, 255, 0);
+  /* backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px); */
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 #Esteban {
-  width: 140px;
-  height: 140px;
+  width: 240px;
+  height: 240px;
   animation: changeBorderRadius 3s ease-in-out infinite alternate;
   border: 3px solid var(--gris2);
   border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
@@ -167,6 +183,35 @@ nav > ul > li > a:hover {
   display: none;
 }
 
+.contacto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.contacto > h2{
+  font-size: 1.4em;
+  padding: 3% 10%;
+  word-break: break-word;
+  width: 80%;
+  text-align: center;
+}
+
+.contacto > ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  font-size: 2em;
+}
+
+.contacto > ul > li > a{
+  color: var(--gris2);
+}
+
 /* Responsive */
 
 @media (max-width: 767px) {
@@ -188,20 +233,10 @@ nav > ul > li > a:hover {
     background-color: #555; /* Color del thumb del scrollbar al pasar el mouse sobre él */
   }
 
-  .hamburger-icon {
-    display: block;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 999;
-  }
-
   nav ul {
     display: block;
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     height: 100vh;
     background-color: #fff;
@@ -209,6 +244,7 @@ nav > ul > li > a:hover {
     z-index: 999;
     transition: opacity 0.3s ease-in-out;
     opacity: 0;
+    left: 100%;
   }
 
   nav.deployed ul {
@@ -217,12 +253,43 @@ nav > ul > li > a:hover {
     justify-content: center;
     align-items: center;
     opacity: 1;
-    
+    left: 0;
+  }
+
+  .hamburger-icon {
+    display: inline-block;
+    cursor: pointer;
+    height: 100%;
+    top: 25%;
+    right: 10%;
+    transition: transform 0.3s;
+    z-index: 999;
+  }
+
+  .hamburger-icon i {
+    opacity: 1;
+    position: absolute;
+    transform: translate(50%, 50%);
+    transition: transform 0.3s, opacity 0.3s;
+    z-index: 1;
+  }
+
+  .hamburger-icon i:last-child {
+    z-index: 2;
+    opacity: 0;
+  }
+
+  .hamburger-icon.open i:first-child {
+    opacity: 0;
+  }
+
+  .hamburger-icon.open i:last-child {
+    opacity: 1;
   }
 
   nav.deployed a {
     color: #333;
-    padding: 20%;
+    padding: 20% 0;
     font-size: 1.6em;
   }
 }

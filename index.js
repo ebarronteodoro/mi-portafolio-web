@@ -106,10 +106,16 @@ addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  var navEnlaces = document.querySelectorAll("header div nav ul li a");
+  var navEnlaces = document.querySelectorAll("header div nav ul li");
   navEnlaces.forEach(function (link) {
     link.addEventListener("click", function () {
       nav.classList.remove("deployed");
     });
   });
+
+  document
+    .querySelector(".hamburger-icon")
+    .addEventListener("click", function () {
+      this.classList.toggle("open");
+    });
 });
