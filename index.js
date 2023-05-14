@@ -37,39 +37,20 @@ addEventListener("DOMContentLoaded", () => {
         } else a.style.paddingTop = "0";
       }
     });
-  // var e,
-  //   t = document.querySelector(".hamburger-icon"),
-  //   r = document.querySelector("header div nav");
-  // t.addEventListener("click", function () {
-  //   r.classList.toggle("deployed"),
-  //     r.classList.contains("deployed")
-  //       ? setTimeout(function () {
-  //           r.querySelector("nav").style.opacity = "1";
-  //         }, 10)
-  //       : (r.querySelector("nav").style.opacity = "0");
-  // }),
-  //   document.querySelectorAll("header div nav ul li").forEach(function (e) {
-  //     e.addEventListener("click", function () {
-  //       r.classList.remove("deployed");
-  //     });
-  //   }),
-  //   document
-  //     .querySelector(".hamburger-icon")
-  //     .addEventListener("click", function () {
-  //       this.classList.toggle("open");
-  //     });
 
   var hamburger = document.querySelector(".hamburger-icon");
   var mobileMenu = document.querySelector("header div nav");
   var links = mobileMenu.querySelectorAll(".icono");
   var iconBars = hamburger.querySelector(".fa-bars");
   var iconTimes = hamburger.querySelector(".fa-times");
+  var body = document.querySelector('body');
 
   // Escuchar el evento de clic en el icono de hamburguesa
   hamburger.addEventListener("click", function () {
     mobileMenu.classList.toggle("deployed");
     iconBars.classList.toggle("hide");
     iconTimes.classList.toggle("show");
+    body.classList.toggle("no-scroll");
   });
 
   // Escuchar el evento de clic en cada enlace dentro del menú
